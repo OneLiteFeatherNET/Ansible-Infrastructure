@@ -1,6 +1,7 @@
 - name: geyser
   src: https://github.com/OneLiteFeatherNET/ansible-role-geyser.git
   scm: git
+  version: main
 
 - name: sdkman
   src: https://github.com/Comcast/ansible-sdkman.git
