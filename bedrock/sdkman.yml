@@ -1,0 +1,23 @@
+sdkman_user: geyser
+sdkman_group: geyser
+sdkman_auto_answer: true
+sdkman_update: true
+sdkman_install_packages:
+  - { candidate: java, version: 21.0.6-zulu }
+sdkman_defaults:
+  java: 21.0.6-zulu
+sdkman_flush_caches_before:
+  - temp
+sdkman_flush_caches_after:
+  - archives
+  - broadcast
+  - candidates
+  - temp
+sdkman_offline_mode: false
+sdkman_update_alternatives:
+  - candidate: java
+    name: java
+    link: /usr/bin/java
+  - candidate: java
+    name: javac
+    link: /usr/bin/javac
