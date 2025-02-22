@@ -16,7 +16,7 @@ jobs:
         run: ansible-galaxy install -r requirements.yml
 
       - name: Decrypt Ansible Vault
-        run: echo $ANSIBLE_VAULT_PASSWORD > .vault-password
+        run: echo $ANSIBLE_VAULT_PASSWORD > .vault_password
         env:
           ANSIBLE_VAULT_PASSWORD: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
 
@@ -33,20 +33,13 @@ jobs:
   #     - name: Checkout repository
   #       uses: actions/checkout@v2
   #
-  #     - name: Set up Ansible
-  #       uses: dawidd6/action-ansible-playbook@v2
-  #       with:
-  #         version: '2.11'
-  #
   #     - name: Install Ansible Galaxy Roles
   #       run: ansible-galaxy install -r requirements.yml
   #
   #     - name: Decrypt Ansible Vault
-  #       run: echo $ANSIBLE_VAULT_PASSWORD > .vault-password
+  #       run: echo $ANSIBLE_VAULT_PASSWORD > .vault_password
   #       env:
   #         ANSIBLE_VAULT_PASSWORD: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
   #
   #     - name: Run Another Playbook
-  #       run: ansible-playbook -i inventory-vault.yml another-playbook.yml --ask-vault-pass
-  #       env:
-  #         ANSIBLE_VAULT_PASSWORD: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
+  #       run: ansible-playbook -i inventory-vault.yml another-playbook.yml --check

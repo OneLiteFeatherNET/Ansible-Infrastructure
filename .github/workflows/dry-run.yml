@@ -17,7 +17,7 @@ jobs:
       - name: Install Ansible Galaxy Roles
         run: ansible-galaxy install -r requirements.yml
       - name: Decrypt Ansible Vault
-        run: echo $ANSIBLE_VAULT_PASSWORD > .vault-password
+        run: echo $ANSIBLE_VAULT_PASSWORD > .vault_password
         env:
           ANSIBLE_VAULT_PASSWORD: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
       - name: Run Ansible Playbook
