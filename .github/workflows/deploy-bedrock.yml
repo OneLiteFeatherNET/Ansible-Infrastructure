@@ -1,0 +1,26 @@
+name: Automated Geyser and SDKMAN! Deployment
+on:
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  deploy:
+    name: Automated Geyser and SDKMAN! Deployment
+    runs-on: self-hosted
+
+    steps:  
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Ansible
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          version: '2.11'
+      - name: Install Ansible Galaxy Roles
+        run: ansible-galaxy install -r requirements.yml
+      - name: Decrypt Ansible Vault
+        run: echo $ANSIBLE_VAULT_PASSWORD > .vault-password
+        env:
+          ANSIBLE_VAULT_PASSWORD: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
+      - name: Run Ansible Playbook
+        run: ansible-playbook -i inventory-vault.yml bedrock.yml --check
