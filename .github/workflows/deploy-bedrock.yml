@@ -16,5 +16,13 @@ jobs:
         run: echo $ANSIBLE_VAULT_PASSWORD > .vault_password
         env:
           ANSIBLE_VAULT_PASSWORD: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
+      - name: Add ssh key
+        run: |
+          mkdir -p ~/.ssh
+          chmod 0700 ~/.ssh
+          eval $(ssh-agent -s)
+          ssh-add <(echo "$SSH_PRIVATE_KEY")
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Run Ansible Playbook
         run: ansible-playbook -i inventory-vault.yml bedrock.yml --check
