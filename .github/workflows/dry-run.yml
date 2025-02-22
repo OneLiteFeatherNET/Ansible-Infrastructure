@@ -14,11 +14,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Set up Ansible
-        uses: dawidd6/action-ansible-playbook@v3
-        with:
-          version: '2.11'
       - name: Install Ansible Galaxy Roles
         run: ansible-galaxy install -r requirements.yml
       - name: Decrypt Ansible Vault
