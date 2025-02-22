@@ -1,0 +1,7 @@
+- name: geyser
+  src: https://github.com/OneLiteFeatherNET/ansible-role-geyser.git
+  scm: git
+
+- name: sdkman
+  src: https://github.com/Comcast/ansible-sdkman.git
+  scm: git

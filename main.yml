@@ -1,0 +1,9 @@
+---
+- hosts: bedrock-01
+  become: yes
+  roles:
+    - role: geyser
+    - role: sdkman
+  vars_files:
+    - bedrock/vault.yml
+    - bedrock/vars.yml
