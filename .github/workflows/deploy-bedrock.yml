@@ -6,7 +6,7 @@ on:
 jobs:
   deploy:
     name: Automated Geyser and SDKMAN! Deployment
-    runs-on: [self-hosted, linux, x64, ansible]
+    runs-on: [self-hosted, Linux, X64, ansible]
     steps:  
       - name: Checkout repository
         uses: actions/checkout@v2

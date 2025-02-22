@@ -9,7 +9,7 @@ on:
 jobs:
   dry-run:
     name: Dry Run Ansible Playbook Bedrock
-    runs-on: [self-hosted, linux, x64, ansible]
+    runs-on: [self-hosted, Linux, X64, ansible]
 
     steps:
       - name: Checkout repository
