@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Ansible Galaxy Roles
-        run: ansible-galaxy install -r requirements.yml
+        run: ansible-galaxy install -r requirements.yml --force
 
       - name: Decrypt Ansible Vault
         run: echo $ANSIBLE_VAULT_PASSWORD > .vault_password
