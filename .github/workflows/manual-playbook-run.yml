@@ -6,7 +6,7 @@ on:
 jobs:
   run-bedrock:
     name: Run Bedrock Playbook
-    runs-on: self-hosted
+    runs-on: [self-hosted, linux, x64, ansible]
 
     steps:
       - name: Checkout repository
