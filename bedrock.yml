@@ -1,6 +1,7 @@
 ---
 - hosts: bedrock-01
   become: yes
+  remote_user: ansible
   roles:
     - geyser
     - sdkman
