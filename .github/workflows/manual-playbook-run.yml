@@ -29,7 +29,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       
       - name: Run Bedrock Playbook
-        run: ansible-playbook -i inventory-vault.yml bedrock.yml --check
+        run: ansible-playbook -vvv -i inventory-vault.yml bedrock.yml --check
 
   # Add additional playbooks as separate jobs
   # Example:
