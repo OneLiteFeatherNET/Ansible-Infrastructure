@@ -2,9 +2,5 @@
 - hosts: bedrock-01
   become: yes
   remote_user: ansible
-  roles:
-    - geyser
-    - sdkman
-  vars_files:
-    - bedrock/sdkman.yml
-    - bedrock/vault.yml
+  roles: ["geyser", "sdkman"]
+  vars_files: ["bedrock/vault.yml", "bedrock/vars.yml", "bedrock/sdkman.yml"] 
