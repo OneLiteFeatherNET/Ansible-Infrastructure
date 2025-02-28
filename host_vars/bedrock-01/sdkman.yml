@@ -4,7 +4,7 @@ sdkman_auto_answer: true
 sdkman_update: true
 sdkman_install_packages:
   - { candidate: java, version: 21.0.6-tem }
-sdkman_user_home_dir: false
+sdkman_user_home_dir: true
 
 sdkman_defaults:
   java: 21.0.6-tem
