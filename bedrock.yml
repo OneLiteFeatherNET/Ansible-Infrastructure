@@ -6,6 +6,5 @@
     - geyser
     - sdkman
   vars_files:
-    - bedrock/vault.yml
-    - bedrock/vars.yml
     - bedrock/sdkman.yml
+    - bedrock/vault.yml
