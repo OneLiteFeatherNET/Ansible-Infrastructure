@@ -16,15 +16,11 @@ jobs:
         run: ansible-galaxy install -r requirements.yml --force
 
       - name: Decrypt Ansible Vault
-        run: echo $ANSIBLE_VAULT_PASSWORD > .vault_password
-        env:
-          ANSIBLE_VAULT_PASSWORD: ${{ secrets.ANSIBLE_VAULT_PASSWORD }}
+        run: echo "${{ secrets.ANSIBLE_VAULT_PASSWORD }}" > .vault_password
       - name: Add ssh key
         run: |
-          echo "$SSH_PRIVATE_KEY" > private_key.pem
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       
       - name: Run Bedrock Playbook
         run: ansible-playbook -i inventory-vault.yml bedrock.yml --private-key private_key.pem --check
