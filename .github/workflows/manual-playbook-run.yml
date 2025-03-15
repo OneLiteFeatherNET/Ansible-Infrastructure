@@ -22,7 +22,7 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
       - name: Install Ansible
-        run: python3 -m pip install --user ansible-core==2.15.13
+        run: python3 -m pip install ansible-core==2.15.13 --break-system-packages
       - name: Ansible version
         run: ansible --version
       - name: Run Bedrock Playbook
