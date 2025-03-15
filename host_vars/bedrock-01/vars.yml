@@ -3,15 +3,15 @@ sdkman_group: geyser
 sdkman_auto_answer: true
 sdkman_update: true
 sdkman_install_packages:
-  - { candidate: java, version: 21.0.6-tem }
+  - { candidate: java, version: 21.0.1-tem }
 sdkman_user_home_dir: false
 
 sdkman_defaults:
-  java: 21.0.6-tem
+  java: 21.0.1-tem
 sdkman_update_alternatives:
-- candidate: java
-  name: java
-  link: /usr/bin/java
-- candidate: java
-  name: javac
-  link: /usr/bin/javac
+  - candidate: java
+    name: java
+    link: /usr/bin/java
+  - candidate: java
+    name: javac
+    link: /usr/bin/javac
