@@ -21,7 +21,8 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
-      
+      - name: Ansible version
+        run: ansible --version
       - name: Run Bedrock Playbook
         run: ansible-playbook -i inventory-vault.yml bedrock.yml --private-key private_key.pem --check
 
