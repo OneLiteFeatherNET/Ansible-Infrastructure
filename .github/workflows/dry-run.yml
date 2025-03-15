@@ -28,5 +28,7 @@ jobs:
           ssh-add <(echo "$SSH_PRIVATE_KEY")
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Ansible version
+        run: ansible --version
       - name: Run Ansible Playbook
         run: ansible-playbook -i inventory-vault.yml bedrock.yml --check
