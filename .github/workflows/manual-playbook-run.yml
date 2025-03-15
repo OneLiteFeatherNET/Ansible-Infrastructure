@@ -18,7 +18,7 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
       - name: Install Ansible
-        run: python3 -m pip install ansible-core==2.15.13 --break-system-packages
+        run: python3 -m pip install ansible==2.15.13 --break-system-packages
       - name: Install Ansible Galaxy Roles
         run: ansible-galaxy install -r requirements.yml --force
       - name: Ansible version
