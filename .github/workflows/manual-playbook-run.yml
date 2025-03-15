@@ -11,10 +11,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Install Ansible Galaxy Roles
-        run: ansible-galaxy install -r requirements.yml --force
-
       - name: Decrypt Ansible Vault
         run: echo "${{ secrets.ANSIBLE_VAULT_PASSWORD }}" > .vault_password
       - name: Add ssh key
@@ -23,6 +19,8 @@ jobs:
           chmod 600 private_key.pem
       - name: Install Ansible
         run: python3 -m pip install ansible-core==2.15.13 --break-system-packages
+      - name: Install Ansible Galaxy Roles
+        run: ansible-galaxy install -r requirements.yml --force
       - name: Ansible version
         run: ansible --version
       - name: Run Bedrock Playbook
