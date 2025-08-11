@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Decrypt Ansible Vault
         run: echo "${{ secrets.ANSIBLE_VAULT_PASSWORD }}" > .vault_password
       - name: Add ssh key

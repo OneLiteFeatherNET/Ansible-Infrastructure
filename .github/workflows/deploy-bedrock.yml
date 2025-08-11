@@ -9,7 +9,7 @@ jobs:
     runs-on: [self-hosted, Linux, X64, ansible]
     steps:  
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Install Ansible Galaxy Roles 
         run: ansible-galaxy install -r requirements.yml --force
       - name: Decrypt Ansible Vault
