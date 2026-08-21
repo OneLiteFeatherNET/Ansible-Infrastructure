@@ -8,5 +8,6 @@
       "package-name": "Ansible-Infrastructure",
       "changelog-path": "CHANGELOG.md"
     }
-  }
+  },
+  "bootstrap-sha": "5b317e680b8a21ab5e8917e7e2c50fe39d0cb32e"
 }
